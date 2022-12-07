@@ -2,9 +2,8 @@
 {
     public abstract class ModelFactory //Абстрактная фабрика
     {
-        public virtual Model CreateObject(string code) {return null;}
+        public virtual Model CreateObject(string code) { return null; }
     }
-
 
     public class MyObjectsFactory : ModelFactory
     {
@@ -14,10 +13,10 @@
             switch (code)
             {
                 case "Circle":
-                    temp = new CCircle();
+                    temp = new Circle();
                     break;
                 case "Square":
-                    temp = new CSquare();
+                    temp = new Square();
                     break;
                 case "Triangle":
                     temp = new Triangle();
@@ -30,5 +29,3 @@
         }
     }
 }
-
-   

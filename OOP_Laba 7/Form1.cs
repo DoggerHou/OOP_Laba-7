@@ -15,6 +15,9 @@ namespace OOP_Laba_7
         Point pBox;
 
 
+        private int _x = 0;
+        private int _y = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -36,10 +39,10 @@ namespace OOP_Laba_7
             this.ActiveControl = null;
 
             if (ellipse)//Добавление эллипса
-                myStorage.AddObject(new CCircle(e.Location, btn_color, pBox), e, controlUp);
+                myStorage.AddObject(new Circle(e.Location, btn_color, pBox), e, controlUp);
 
             if (square)//добавление квадрата
-                myStorage.AddObject(new CSquare(e.Location, btn_color, pBox), e, controlUp);
+                myStorage.AddObject(new Square(e.Location, btn_color, pBox), e, controlUp);
             pictureBox.Invalidate();
 
             if (triangle)//добавление треугольника
@@ -200,6 +203,8 @@ namespace OOP_Laba_7
         {
             MyObjectsFactory factory = new MyObjectsFactory();
             myStorage.LoadStorage(factory);
+
+
         }
     }
 }
